@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace ReverseGeoCoderDotnet
 {
@@ -70,11 +70,11 @@ namespace ReverseGeoCoderDotnet
       string APICall = Path.Combine(baseServiceUrl, requestQuery);
       for (int i = 0; i < APICall.Length; i += 70)
       {
-        try
+        if (i + 70 < APICall.Length)
         {
           Console.WriteLine(APICall.Substring(i, 70));
         }
-        catch
+        else
         {
           Console.WriteLine(APICall.Substring(i, APICall.Length - i));
         }
